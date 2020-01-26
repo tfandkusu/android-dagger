@@ -46,10 +46,10 @@ class EnterDetailsFragment : Fragment() {
      */
 
     @Inject
-    private lateinit var registrationViewModel: RegistrationViewModel
+    lateinit var registrationViewModel: RegistrationViewModel
 
     @Inject
-    private lateinit var enterDetailsViewModel: EnterDetailsViewModel
+    lateinit var enterDetailsViewModel: EnterDetailsViewModel
 
     private lateinit var errorTextView: TextView
     private lateinit var usernameEditText: EditText

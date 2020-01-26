@@ -14,20 +14,8 @@ import javax.inject.Singleton
  * シングルトンを使いたいときは @Singleton をつける。
  */
 @Singleton
-@Component(modules = [StorageModule::class])
+@Component(modules = [StorageModule::class, AppSubcomponents::class /*ここでSubcomponentsも指定する*/])
 interface AppComponent {
-    /**
-     * RegistrationActivityはInjectを要求していることを表す
-     */
-    fun inject(activity: RegistrationActivity)
-
-    fun inject(activity: MainActivity)
-
-    fun inject(fragment: EnterDetailsFragment)
-
-    fun inject(fragment: TermsAndConditionsFragment)
-
-
     /**
      * AppComponentのインスタンスを作る担当
      */
@@ -38,5 +26,14 @@ interface AppComponent {
          */
         fun create(@BindsInstance context: Context): AppComponent
     }
+
+    /**
+     * MainActivityは注入を使いたい
+     */
+    fun inject(activity: MainActivity)
+
+
+    fun registrationComponent(): RegistrationComponent.Factory
+
 
 }
