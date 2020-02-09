@@ -7,8 +7,11 @@ import dagger.Subcomponent
 
 /**
  * @Subcomponentをつけて
+ *
+ * あるスコープをつけたComponentに対して、おなじスコープをつけた注入対象クラスのインスタンスはシングルインスタンスになる。
  */
 @Subcomponent
+@ActivityScope
 interface RegistrationComponent {
 
     /**
